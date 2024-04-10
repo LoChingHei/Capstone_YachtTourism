@@ -39,22 +39,7 @@ module.exports = {
     add_yacht: async function(req, res) {
         connectToNetwork(async contract => {
             try {
-                var array       = req.params.tuna.split('_');
-                const yacht = {
-                    ShipId: ShipId,
-                    Location: Location,
-                    LogBook: LogBook,
-                    Owner: Owner,
-                    SignatureCompany: "",
-                    SignatureSkipper: "",
-                    Booking: false,
-                    TimestampFrom: "",
-                    TimestampTo: "",
-                    Allbooking: []
-                };
-                await contract.submitTransaction('addYact', JSON.stringify(yacht));
-                console.log('Yacht added successfully');
-                res.json({ message: 'Yacht added successfully' });
+                
             } catch (error) {
                 console.error('Failed to add yacht:', error);
                 res.status(500).json({ error: 'Failed to add yacht' });
@@ -64,10 +49,7 @@ module.exports = {
     book_yacht: async function(req, res) {
         connectToNetwork(async contract => {
             try {
-                const { key, from, to } = req.body;
-                await contract.submitTransaction('book', key, from, to);
-                console.log('Yacht booking successful');
-                res.json({ message: 'Yacht booking successful' });
+                
             } catch (error) {
                 console.error('Failed to book yacht:', error);
                 res.status(500).json({ error: 'Failed to book yacht' });
@@ -77,10 +59,7 @@ module.exports = {
     sign_company: async function(req, res) {
         connectToNetwork(async contract => {
             try {
-                const { key, signature } = req.body;
-                await contract.submitTransaction('signcompany', key, signature);
-                console.log('Company signature added successfully');
-                res.json({ message: 'Company signature added successfully' });
+                
             } catch (error) {
                 console.error('Failed to add company signature:', error);
                 res.status(500).json({ error: 'Failed to add company signature' });
@@ -90,10 +69,7 @@ module.exports = {
     sign_skipper: async function(req, res) {
         connectToNetwork(async contract => {
             try {
-                const { key, signature } = req.body;
-                await contract.submitTransaction('signskipper', key, signature);
-                console.log('Skipper signature added successfully');
-                res.json({ message: 'Skipper signature added successfully' });
+                
             } catch (error) {
                 console.error('Failed to add skipper signature:', error);
                 res.status(500).json({ error: 'Failed to add skipper signature' });
@@ -103,12 +79,7 @@ module.exports = {
     query_yacht: async function(req, res) {
         connectToNetwork(async contract => {
             try {
-                const { key } = req.params;
-                const result = await contract.evaluateTransaction('queryYacht', key);
-                if (!result) {
-                    console.error('No yacht found for the given key');
-                    res.status(404).json({ error: 'No yacht found for the given key' });
-                    return;
+                
                 }
                 res.json(JSON.parse(result.toString()));
             } catch (error) {
