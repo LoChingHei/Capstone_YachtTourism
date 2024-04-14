@@ -56,6 +56,8 @@ func (s *SmartContract) Invoke(APIstub shim.ChaincodeStubInterface) peer.Respons
 		return s.signcompany(APIstub, args)
 	} else if function == "signskipper"{
 		return s.signskipper(APIstub, args)
+	} else if function == "removebooking"{
+		return s.removebooking(APIstub, args)
 	}
 	return shim.Error("Invalid Smart Contract function name.")
 }
@@ -146,6 +148,30 @@ func (s *SmartContract) book(APIstub shim.ChaincodeStubInterface, args []string)
 	return shim.Success(nil)
 }
 
+func (s *SmartContract) removebooking(APIstub shim.ChaincodeStubInterface, args []string) peer.Response{
+	if len(args) != 1 {
+		return shim.Error("Invalid number of arguments - expecting 3")
+	}
+	yachtAsBytes, _ := APIstub.GetState(args[0])
+	if yachtAsBytes == nil {
+		return shim.Error("Can not find the yacht record")
+	}
+	yacht := Yacht{}
+	json.Unmarshal(yachtAsBytes, &yacht)
+	//record booking
+	yacht.Booking = false
+	if len(yacht.Allbooking) > 0 {
+		yacht.Allbooking = yacht.Allbooking[:len(yacht.Allbooking)-1]
+	}
+	yachtAsBytes, _ = json.Marshal(yacht)
+	err := APIstub.PutState(args[0], yachtAsBytes)
+	if err != nil {
+		return shim.Error("Remove Booking failed.")
+	}
+	return shim.Success(nil)
+}
+
+
 /*signature skipper // done
 accept two arguments key, and skipper signiture
 */
@@ -189,6 +215,7 @@ func (s *SmartContract) signcompany(APIstub shim.ChaincodeStubInterface, args []
 	}
 	return shim.Success(nil)
 }
+
 
 /* queryAllYacht method //done
  */
