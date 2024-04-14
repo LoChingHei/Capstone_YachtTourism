@@ -16,15 +16,17 @@ type SmartContract struct {
 
 // Yacht data
 type Yacht struct {
-	ShipId    string `json:"shipid"`
-	Location  string `json:"location"`
-	LogBook  string `json:"logbook"`
-	Owner    string `json:"owner"`
-	SignatureCompany string `json:"signatureC"`
-	SignatureSkipper string `json:"signatureS"`
-	Booking  bool `json: "booking"`
-	TimestampFrom string `json:"timestampfrom"`
-	TimestampTo string `json:"timestampto"`
+	ShipId            string   `json:"shipid"`
+	Location          string   `json:"location"`
+	LogBook           string   `json:"logbook"`
+	Owner             string   `json:"owner"`
+	SignatureCompany  string   `json:"signatureC"`
+	SignatureSkipper  string   `json:"signatureS"`
+	Booking           bool     `json:"booking"`
+	TimestampFrom     string   `json:"timestampfrom"`
+	TimestampTo       string   `json:"timestampto"`
+	Allbooking        [][]string `json:"allbooking"`
+	IPFS             string   `json:"ipfs"`
 }
 
 /*
@@ -44,8 +46,8 @@ func (s *SmartContract) Invoke(APIstub shim.ChaincodeStubInterface) peer.Respons
 		return s.queryYacht(APIstub, args)
 	} else if function == "initLedger" {
 		return s.initLedger(APIstub)
-	} else if function == "addYact" {
-		return s.addYact(APIstub, args)
+	} else if function == "addYacht" {
+		return s.addYacht(APIstub, args)
 	} else if function == "queryAllYacht" {
 		return s.queryAllYacht(APIstub)
 	} else if function == "book" {
@@ -78,9 +80,9 @@ func (s *SmartContract) queryYacht(APIstub shim.ChaincodeStubInterface, args []s
  */
 func (s *SmartContract) initLedger(APIstub shim.ChaincodeStubInterface) peer.Response {
 	yacht := []Yacht{
-		Yacht{ShipId: "80F 3476", Location:"67.0006, -70.4576", LogBook: "Hash", Owner: "John", SignatureCompany: "", SignatureSkipper:"", Booking:false, TimestampFrom:"", TimestampTo:""},
-		Yacht{ShipId: "35M 3314", Location:"40.6064, -73.6745", LogBook: "Hash", Owner: "Peter", SignatureCompany: "DID_C", SignatureSkipper:"DID_S", Booking:true, TimestampFrom:"1706954400", TimestampTo:"1707127200"},
-		Yacht{ShipId: "92F 8193", Location:"46.147656, -1.163943", LogBook: "Hash", Owner: "Anna", SignatureCompany: "DID_C", SignatureSkipper:"DID_S", Booking:false, TimestampFrom:"", TimestampTo:""},
+		Yacht{ShipId: "80F 3476", Location:"67.0006, -70.4576", LogBook: "Hash", Owner: "John", SignatureCompany: "", SignatureSkipper:"", Booking:false, TimestampFrom:"", TimestampTo:"", Allbooking: [][]string{{"1713585600", "1713758400"}, {"1714017600", "1714104000"}}, IPFS: "https://bafybeidzrnffghqo35mh6nzdakioweg5zn5ad74jjwgzpsrkishnwrfkky.ipfs.cf-ipfs.com/" },
+		Yacht{ShipId: "35M 3314", Location:"40.6064, -73.6745", LogBook: "Hash", Owner: "Peter", SignatureCompany: "sign", SignatureSkipper:"DID_S", Booking:true, TimestampFrom:"1706954400", TimestampTo:"1707127200", Allbooking: [][]string{}, IPFS: "https://bafybeiexopp6sdls4fix3nwjib4reiytgxoevtb4luur4tlb6glcbm26eu.ipfs.cf-ipfs.com/"},
+		Yacht{ShipId: "92F 8193", Location:"46.147656, -1.163943", LogBook: "Hash", Owner: "Anna", SignatureCompany: "", SignatureSkipper:"DID_S", Booking:false, TimestampFrom:"", TimestampTo:"", Allbooking: [][]string{}, IPFS: "https://bafybeidm5i37kedzbize5cvh6z7n2crexfe4zsfnczfnqcfpb66xixfmfq.ipfs.cf-ipfs.com/" },
 	}
 
 	i := 0
@@ -94,13 +96,13 @@ func (s *SmartContract) initLedger(APIstub shim.ChaincodeStubInterface) peer.Res
 
 /* record method //Done
  * Used to add yacht data to yacht records
- * Accept five argument - key, ShipId, location, logbook, owner, company signature
+ * Accept five argument - key, ShipId, location, logbook, owner, ipfs
  */
-func (s *SmartContract) addYact(APIstub shim.ChaincodeStubInterface, args []string) peer.Response {
-	if len(args) != 5 {
-		return shim.Error("Invalid number of arguments - expecting 5")
+func (s *SmartContract) addYacht(APIstub shim.ChaincodeStubInterface, args []string) peer.Response {
+	if len(args) != 6 {
+		return shim.Error("Invalid number of arguments - expecting 6")
 	}
-	var yacht = Yacht{ShipId: args[1], Location: args[2], LogBook: args[3], Owner: args[4], SignatureCompany: "", SignatureSkipper: "", Booking: false, TimestampFrom: "", TimestampTo: ""}
+	var yacht = Yacht{ShipId: args[1], Location: args[2], LogBook: args[3], Owner: args[4], SignatureCompany: "", SignatureSkipper: "", Booking: false, TimestampFrom: "", TimestampTo: "", Allbooking: [][]string{}, IPFS: args[5]}
 	yachtAsBytes, _ := json.Marshal(yacht)
 	err := APIstub.PutState(args[0], yachtAsBytes)
 	if err != nil {
@@ -131,9 +133,11 @@ func (s *SmartContract) book(APIstub shim.ChaincodeStubInterface, args []string)
 	}
 	//record booking
 	yacht.Booking = true
+	yacht.SignatureCompany = ""
 	yacht.TimestampFrom = args[1]
 	yacht.TimestampTo = args[2]
-
+	booking := []string{args[1], args[2]}
+	yacht.Allbooking = append(yacht.Allbooking, booking)
 	yachtAsBytes, _ = json.Marshal(yacht)
 	err := APIstub.PutState(args[0], yachtAsBytes)
 	if err != nil {
@@ -177,6 +181,7 @@ func (s *SmartContract) signcompany(APIstub shim.ChaincodeStubInterface, args []
 	yacht := Yacht{}
 	json.Unmarshal(yachtAsBytes, &yacht)
 	yacht.SignatureCompany = args[1]
+	yacht.Booking = false
 	yachtAsBytes, _ = json.Marshal(yacht)
 	err := APIstub.PutState(args[0], yachtAsBytes)
 	if err != nil {
@@ -186,7 +191,6 @@ func (s *SmartContract) signcompany(APIstub shim.ChaincodeStubInterface, args []
 }
 
 /* queryAllYacht method //done
-	All avaliable Yacht
  */
 func (s *SmartContract) queryAllYacht(APIstub shim.ChaincodeStubInterface) peer.Response {
 	startKey := "0"
