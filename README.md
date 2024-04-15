@@ -27,7 +27,7 @@ The rental process in traditional yacht rental services may involve manual paper
 
 Disputes may arise between renters and yacht owners regarding rental terms, damages, cancellations, and liability, leading to legal complications, financial losses, and damage to reputation.
 
-In order to solve the problems, we aimed to divide our project into main three components that target to the problems. 
+### In order to solve the problems, we plan to divide our project into main three components that target to the problems. 
 
 #### Yacht Rental Booking and Payments
 
