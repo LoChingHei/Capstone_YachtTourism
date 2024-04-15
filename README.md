@@ -1,6 +1,6 @@
 # Capstone_YachtTourism
 
-## Project Description
+## Summary
 
 ## Project Plan
 
