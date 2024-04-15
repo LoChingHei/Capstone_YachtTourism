@@ -64,7 +64,6 @@ Kevon Vincent Jaggassar (101434025)
 
 `npm: v5.x git: 2.9.x or higher`
 
-## Architecture Diagram
 
 ## How to Use
 
