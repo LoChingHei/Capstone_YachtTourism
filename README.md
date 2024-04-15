@@ -44,6 +44,12 @@ With the feature provided in private blockchain, the technology can deliver a se
 
 ## Team
 
+Lo Ching Hei (101486171)
+
+Kirill Spitsyn (101518315)
+
+Kevon Vincent Jaggassar (101434025)  
+
 ## Requirements
 
 `"fabric-samples" repository to run the testnet [4Gb of memory]` 
