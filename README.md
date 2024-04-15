@@ -1,4 +1,4 @@
-# Capstone_YachtTourism
+# BlueWave Yacht Tourism
 
 ## Summary
 
