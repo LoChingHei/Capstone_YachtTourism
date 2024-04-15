@@ -67,3 +67,7 @@ Kevon Vincent Jaggassar (101434025)
 ## Architecture Diagram
 
 ## How to Use
+
+## Note
+
+For more information, please refer to the Documentation foler.
