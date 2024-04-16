@@ -8,7 +8,7 @@ const ccp = JSON.parse(ccpJSON);
 
 async function connectToNetwork(callback) {
     // Create a new file system based wallet for managing identities
-    const walletPath = path.join('/Users/chingheilo/Desktop/Hyperledger_Project/YachtProject/fabric-samples/yacht-app/wallet');
+    const walletPath = path.join(__dirname,'/wallet');
     const wallet = await Wallets.newFileSystemWallet(walletPath);
 
     // Check to see if we've already enrolled user
