@@ -110,8 +110,8 @@ func (s *SmartContract) initLedger(APIstub shim.ChaincodeStubInterface) peer.Res
  * Accept five argument - key, ShipId, location, logbook, owner, ipfs
  */
 func (s *SmartContract) addYacht(APIstub shim.ChaincodeStubInterface, args []string) peer.Response {
-	if len(args) != 14 {
-		return shim.Error("Invalid number of arguments - expecting 14")
+	if len(args) != 15 {
+		return shim.Error("Invalid number of arguments - expecting 15")
 	}
 	var yacht = Yacht{ShipId: args[1], Location: args[2], LogBook: args[3], Owner: args[4], SignatureCompany: "", SignatureSkipper: "", Booking: false, TimestampFrom: "", TimestampTo: "", Allbooking: [][]string{}, IPFS: args[5], Name: args[6], Model: args[7], Capacity: args[8], Description: args[9], Length: args[10], Width: args[11], Amenities: args[12], Crew: args[13], SafetyFeatures: args[14],}
 	yachtAsBytes, _ := json.Marshal(yacht)
