@@ -20,7 +20,7 @@ async function connectToNetwork(callback) {
         ccp, 
         {
             wallet: wallet, 
-            identity:'User2@org1.example.com', 
+            identity:'User1@org1.example.com', 
             discovery:{enabled:true, asLocalhost:true}
         }
     );
