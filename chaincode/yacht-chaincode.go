@@ -111,7 +111,7 @@ func (s *SmartContract) initLedger(APIstub shim.ChaincodeStubInterface) peer.Res
  */
 func (s *SmartContract) addYacht(APIstub shim.ChaincodeStubInterface, args []string) peer.Response {
 	if len(args) != 14 {
-		return shim.Error("Invalid number of arguments - expecting 6")
+		return shim.Error("Invalid number of arguments - expecting 14")
 	}
 	var yacht = Yacht{ShipId: args[1], Location: args[2], LogBook: args[3], Owner: args[4], SignatureCompany: "", SignatureSkipper: "", Booking: false, TimestampFrom: "", TimestampTo: "", Allbooking: [][]string{}, IPFS: args[5], Name: args[6], Model: args[7], Capacity: args[8], Description: args[9], Length: args[10], Width: args[11], Amenities: args[12], Crew: args[13], SafetyFeatures: args[14],}
 	yachtAsBytes, _ := json.Marshal(yacht)
@@ -129,8 +129,8 @@ Book a yacht //done
 accept three argument - key, from date, to date
 */
 func (s *SmartContract) book(APIstub shim.ChaincodeStubInterface, args []string) peer.Response{
-	if len(args) != 12 {
-		return shim.Error("Invalid number of arguments - expecting 12")
+	if len(args) != 3 {
+		return shim.Error("Invalid number of arguments - expecting 3")
 	}
 	yachtAsBytes, _ := APIstub.GetState(args[0])
 	if yachtAsBytes == nil {
@@ -147,15 +147,6 @@ func (s *SmartContract) book(APIstub shim.ChaincodeStubInterface, args []string)
 	yacht.SignatureCompany = ""
 	yacht.TimestampFrom = args[1]
 	yacht.TimestampTo = args[2]
-	yacht.Name = args[3]
-    	yacht.Model = args[4]
-    	yacht.Capacity = args[5]
-    	yacht.Description = args[6]
-    	yacht.Length = args[7]
-    	yacht.Width = args[8]
-    	yacht.Amenities = args[9]
-    	yacht.Crew = args[10]
-    	yacht.SafetyFeatures = args[11]
 	booking := []string{args[1], args[2]}
 	yacht.Allbooking = append(yacht.Allbooking, booking)
 	yachtAsBytes, _ = json.Marshal(yacht)
