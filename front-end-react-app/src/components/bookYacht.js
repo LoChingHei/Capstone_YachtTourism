@@ -40,7 +40,7 @@ function BookYacht() {
     console.log('Concatenated input value:', inputValue);
   
     try {
-      await axios.get(`http://localhost:8085/book_yacht/${id}`);
+      await axios.get(`http://localhost:8085/book_yacht/${inputValue}`);
       console.log('GET request successful');
       // You can do something after the request is successful
     } catch (error) {
