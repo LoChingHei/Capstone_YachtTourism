@@ -2,6 +2,12 @@
 
 ## Summary
 
+`Our smart contract code is in 'chaincode' folder in .go file`
+`Our front-end react app code is in the 'front-end-react-app' folder`
+`Our backend Express application code is in the 'yacht-application' folder`
+`Our report is in the 'BlueWave_Paper_Report.pdf' file`
+`Our other documentation is in the 'Documentation' folder`
+
 With the improvement in living standards, people are trying to increase their quality of life, in which luxury tourism is getting more and more popular. This project aimed to improve the experience in yacht rental by incorporating blockchain technology to enhance transparency, security, and efficiency. The main focus of the project is to seamlessly track and manage the delivery and storage of luxury yachts, foods and products associated with yacht trips. By leveraging blockchain technology, the project aims to ensure authenticity, reduce fraud, unify, and elevate the overall customer experience in the luxury yacht tourism industry. 
 
 ## Project Plan
