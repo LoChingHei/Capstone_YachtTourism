@@ -98,7 +98,7 @@ module.exports = (function() {
         sign_company: async function(req, res) {
             connectToNetwork(async contract => {
                 try {
-                    var array       = req.params.yacht.split('_');
+                    var array       = req.params.signaturec.split('_');
                     var key         = array[0];
                     var signaturecompany   = array[1];
     
@@ -114,7 +114,7 @@ module.exports = (function() {
         sign_skipper: async function(req, res) {
             connectToNetwork(async contract => {
                 try {
-                    var array       = req.params.yacht.split('_');
+                    var array       = req.params.signatures.split('_');
                     var key         = array[0];
                     var signatureskipper   = array[1];
     
@@ -130,7 +130,7 @@ module.exports = (function() {
         remove_booking: async function(req, res) {
             connectToNetwork(async contract => {
                 try {
-                    var array       = req.params.yacht.split('_');
+                    var array       = req.params.key.split('_');
                     var key         = array[0];
     
                     await contract.submitTransaction('removebooking', key);
