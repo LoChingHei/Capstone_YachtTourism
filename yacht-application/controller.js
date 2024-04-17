@@ -81,7 +81,7 @@ module.exports = (function() {
         book_yacht: async function(req, res) {
             connectToNetwork(async contract => {
                 try {
-                    var array       = req.params.yacht.split('_');
+                    var array       = req.params.booking.split('_');
                     var key         = array[0];
                     var timestampfrom   = array[1];
                     var timestampto     = array[2];
