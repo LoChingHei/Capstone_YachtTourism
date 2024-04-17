@@ -67,6 +67,8 @@ Kevon Vincent Jaggassar (101434025)
 
 ## How to Use
 
+Please refer to documentation.
+
 ## Note
 
 For more information, please refer to the Documentation foler.
