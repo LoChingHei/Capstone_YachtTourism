@@ -40,9 +40,8 @@ module.exports = (function() {
             connectToNetwork(async contract => {
                 try {
                     const result = await contract.submitTransaction('queryAllYacht');
-                    res.json(JSON.parse(result.toString()));
-                    res.render("allyacht",{list: JSON.parse(result)});
-                    
+                    res.send(JSON.parse(result.toString()));
+                    console.log(JSON.parse(result.toString()));
                 } catch (error) {
                     console.error('Failed to query all yachts:', error);
                     res.status(500).json({ error: 'Failed to query all yachts' });
@@ -88,7 +87,7 @@ module.exports = (function() {
                     var timestampto     = array[2];
     
                     await contract.submitTransaction('book', key, timestampfrom, timestampto);
-                    console.log(array)
+                    console.log(array);
                     console.log('Transaction has been submitted');
                     res.json({message:"Transaction has been submitted"});
                 } catch (error) {
