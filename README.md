@@ -33,6 +33,7 @@ With the improvement in living standards, people are trying to increase their qu
 ![image](https://github.com/LoChingHei/Capstone_YachtTourism/assets/72778161/392285d4-c7db-49ef-aaf9-911e936872de)
 `controller.js calls add_yacht function and HyperLedger Fabric network receives the request and provides the following response on our Hyperledger Fabric network meaning yacht was added successfully`
 ![image](https://github.com/LoChingHei/Capstone_YachtTourism/assets/72778161/9606a4b8-21c2-4996-af08-30febab652b4)
+
 `New yacht 'Ocean Explorer Yacht' was added to the list of yachts with all the details we provided in the Add Yacht form as you can see:`
 ![image](https://github.com/LoChingHei/Capstone_YachtTourism/assets/72778161/7a4a18cb-61f3-4067-b272-5783b4caf20c)
 
@@ -46,7 +47,8 @@ Below are examples of booking pages for 2 specific yachts from the list: `
 ![image](https://github.com/LoChingHei/Capstone_YachtTourism/assets/72778161/a4394d4b-09cc-44dd-b39a-d2b44f88805e)
 `controller.js calls book_yacht function and HyperLedger Fabric network receives the request and provides the following response on our Hyperledger Fabric network meaning booking was added successfully`
 ![image](https://github.com/LoChingHei/Capstone_YachtTourism/assets/72778161/9ec49e79-3684-4700-b499-48d7e74831b2)
-'The booked yacht is unavailable, and if we try to book again, we will get this error meaning that yacht can't be booked twice which prevents double booking:`
+
+`The booked yacht is unavailable, and if we try to book again, we will get this error meaning that yacht can't be booked twice which prevents double booking:`
 ![image](https://github.com/LoChingHei/Capstone_YachtTourism/assets/72778161/b013db37-b8be-40fc-8471-853224a1fdf8)
 
 ## Project Plan
