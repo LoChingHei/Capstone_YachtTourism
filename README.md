@@ -31,6 +31,7 @@ With the improvement in living standards, people are trying to increase their qu
 
 'Add Yacht page allows to add new yacht to list of yachts:'
 ![image](https://github.com/LoChingHei/Capstone_YachtTourism/assets/72778161/392285d4-c7db-49ef-aaf9-911e936872de)
+
 `controller.js calls add_yacht function and HyperLedger Fabric network receives the request and provides the following response on our Hyperledger Fabric network meaning yacht was added successfully`
 ![image](https://github.com/LoChingHei/Capstone_YachtTourism/assets/72778161/9606a4b8-21c2-4996-af08-30febab652b4)
 
