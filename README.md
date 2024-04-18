@@ -48,7 +48,9 @@ Below are examples of booking pages for 2 specific yachts from the list: `
 ![image](https://github.com/LoChingHei/Capstone_YachtTourism/assets/72778161/e451dadc-82fd-4de8-b66c-cfefb2eaca4d)
 'To book a yacht, the user selects a book from and to dates and click book now button: '
 ![image](https://github.com/LoChingHei/Capstone_YachtTourism/assets/72778161/a4394d4b-09cc-44dd-b39a-d2b44f88805e)
+
 `controller.js calls book_yacht function and HyperLedger Fabric network receives the request and provides the following response on our Hyperledger Fabric network meaning booking was added successfully`
+
 ![image](https://github.com/LoChingHei/Capstone_YachtTourism/assets/72778161/9ec49e79-3684-4700-b499-48d7e74831b2)
 
 `The booked yacht is unavailable, and if we try to book again, we will get this error meaning that yacht can't be booked twice which prevents double booking:`
