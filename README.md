@@ -25,14 +25,12 @@ With the improvement in living standards, people are trying to increase their qu
 ![image](https://github.com/LoChingHei/Capstone_YachtTourism/assets/72778161/7e68dd73-876e-4811-be60-d26e9ddcaab0)
 ![image](https://github.com/LoChingHei/Capstone_YachtTourism/assets/72778161/6033a7ba-fb7a-4ba2-bc70-5d918612f0c1)
 
-![image](https://github.com/LoChingHei/Capstone_YachtTourism/assets/72778161/562a0e9e-da86-414f-b60a-5375f6227d75)
-![image](https://github.com/LoChingHei/Capstone_YachtTourism/assets/72778161/4e3b1dc7-c2e2-47f5-b92a-35553f462ddd)
+'Add Yacht page allows to add new yacht to list of yachts:'
 ![image](https://github.com/LoChingHei/Capstone_YachtTourism/assets/72778161/392285d4-c7db-49ef-aaf9-911e936872de)
-
-
-
-
-
+`controller.js calls add_yacht function and HyperLedger Fabric network receives the request and provides the following response on our Hyperledger Fabric network meaning yacht was added successfully`
+![image](https://github.com/LoChingHei/Capstone_YachtTourism/assets/72778161/9606a4b8-21c2-4996-af08-30febab652b4)
+'New yacht 'Ocean Explorer Yacht' was added to the list of yachts with all the details we provided in the Add Yacht form as you can see:
+![image](https://github.com/LoChingHei/Capstone_YachtTourism/assets/72778161/7a4a18cb-61f3-4067-b272-5783b4caf20c)
 
 ## Project Plan
 This project aimed to utilize Hyperledger Fabric to solve the problem in traditional yacht industry including: 
