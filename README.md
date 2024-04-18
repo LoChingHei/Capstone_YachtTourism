@@ -14,9 +14,9 @@
 
 With the improvement in living standards, people are trying to increase their quality of life, in which luxury tourism is getting more and more popular. This project aimed to improve the experience in yacht rental by incorporating blockchain technology to enhance transparency, security, and efficiency. The main focus of the project is to seamlessly track and manage the delivery and storage of luxury yachts, foods and products associated with yacht trips. By leveraging blockchain technology, the project aims to ensure authenticity, reduce fraud, unify, and elevate the overall customer experience in the luxury yacht tourism industry. 
 
-## Workflow
+# Workflow
 
-# List Yachts page
+## List Yachts page
 
 `List Yachts page allows to see list of yachts:`
 ![image](https://github.com/LoChingHei/Capstone_YachtTourism/assets/72778161/e5e73931-b7a0-48ff-b1ef-82a354e2942e)
@@ -27,7 +27,7 @@ With the improvement in living standards, people are trying to increase their qu
 ![image](https://github.com/LoChingHei/Capstone_YachtTourism/assets/72778161/7e68dd73-876e-4811-be60-d26e9ddcaab0)
 ![image](https://github.com/LoChingHei/Capstone_YachtTourism/assets/72778161/6033a7ba-fb7a-4ba2-bc70-5d918612f0c1)
 
-# Add Yacht page
+## Add Yacht page
 
 'Add Yacht page allows to add new yacht to list of yachts:'
 ![image](https://github.com/LoChingHei/Capstone_YachtTourism/assets/72778161/392285d4-c7db-49ef-aaf9-911e936872de)
@@ -40,7 +40,7 @@ With the improvement in living standards, people are trying to increase their qu
 
 ![image](https://github.com/LoChingHei/Capstone_YachtTourism/assets/72778161/7a4a18cb-61f3-4067-b272-5783b4caf20c)
 
-# Book Yacht page
+## Book Yacht page
 `By clicking the 'book now' button for the yacht, the user will be redirected to the book page for the specific yacht containing all yacht details and allowing users to book yachts by choosing from and to date for booking.
 Below are examples of booking pages for 2 specific yachts from the list: `
 ![image](https://github.com/LoChingHei/Capstone_YachtTourism/assets/72778161/b542f153-566e-419a-840b-8291020f1341)
