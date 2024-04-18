@@ -2,7 +2,7 @@
 
 ## Summary
 
-`Our smart contract code is in 'chaincode' folder in .go file`
+`Our smart contract code is in 'chaincode' folder in 'yacht-chaincode.go' file`
 
 `Our front-end react app code is in the 'front-end-react-app' folder`
 
