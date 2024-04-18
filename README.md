@@ -14,6 +14,10 @@
 
 With the improvement in living standards, people are trying to increase their quality of life, in which luxury tourism is getting more and more popular. This project aimed to improve the experience in yacht rental by incorporating blockchain technology to enhance transparency, security, and efficiency. The main focus of the project is to seamlessly track and manage the delivery and storage of luxury yachts, foods and products associated with yacht trips. By leveraging blockchain technology, the project aims to ensure authenticity, reduce fraud, unify, and elevate the overall customer experience in the luxury yacht tourism industry. 
 
+## Workflow
+
+
+
 ## Project Plan
 This project aimed to utilize Hyperledger Fabric to solve the problem in traditional yacht industry including: 
 
