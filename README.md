@@ -16,11 +16,12 @@ With the improvement in living standards, people are trying to increase their qu
 
 ## Workflow
 
-AddYacht page allows to see list of yachts:
+`AddYacht page allows to see list of yachts:`
 ![image](https://github.com/LoChingHei/Capstone_YachtTourism/assets/72778161/e5e73931-b7a0-48ff-b1ef-82a354e2942e)
 ![image](https://github.com/LoChingHei/Capstone_YachtTourism/assets/72778161/a9a8e824-d996-4f43-9121-328b8e4710c5)
 ![image](https://github.com/LoChingHei/Capstone_YachtTourism/assets/72778161/2128b897-ee96-4b6a-9cbd-de11a0a0b6ab)
 
+`controller.js calls get_all_yachts function and HyperLedger Fabric network receives the request and provides the following list of yachts as a response on our Hyperledger Fabric network:`
 ![image](https://github.com/LoChingHei/Capstone_YachtTourism/assets/72778161/7e68dd73-876e-4811-be60-d26e9ddcaab0)
 ![image](https://github.com/LoChingHei/Capstone_YachtTourism/assets/72778161/6033a7ba-fb7a-4ba2-bc70-5d918612f0c1)
 
